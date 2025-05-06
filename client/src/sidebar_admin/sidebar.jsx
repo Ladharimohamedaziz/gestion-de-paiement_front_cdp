@@ -40,18 +40,18 @@ function Sidebar() {
         </div>
         <div class="offcanvas-body">
           <div>
-            <div class="d-grid gap-3 -mt-4 col-12 mx-auto p -3 ">
-              <button class="btn btn-blue p-2 rounded-3" type="button">
+            <div class="gap-4 mt-5 mb-5 col-10 mx-auto p-4">
+              <button class="btn btn-blue rounded-3 f" type="button">
                 <i class="bi bi-columns-gap"></i> Dashboard
               </button>
-              <button class="btn btn-blue p-2 rounded-3" type="button">
-                User Management
+              <button class="btn btn-blue rounded-3" type="button">
+                <i class="bi bi-person-plus"></i> User Management
               </button>
-              <button class="btn btn-blue p-2 rounded-3" type="button">
-                Modules
+              <button class="btn btn-blue  rounded-3" type="button">
+                <i class="bi bi-clipboard2-plus"></i> Modules
               </button>
-              <button class="btn btn-blue p-2 rounded-3" type="button">
-                Log Out
+              <button class="btn btn-blue rounded-3" type="button">
+                <i class="bi bi-door-open"></i> Log Out
               </button>
             </div>
           </div>
