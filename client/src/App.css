@@ -26,3 +26,9 @@ ul {
   padding: 0;
 }
 
+.sidebar {
+  background-color: #693838;
+  padding: 10%;
+  margin: 2%;
+  border-radius: 2%;
+}

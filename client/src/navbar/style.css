@@ -1,0 +1,15 @@
+.side{
+    margin: 0;
+    padding: 1%;
+    box-sizing: border-box;
+
+}
+
+
+.btn-gold{
+    color: rgb(36, 31, 31) ;
+  }
+  .btn-gold:hover{
+    color: white ;
+    background-color: #C8aa6e;
+  }

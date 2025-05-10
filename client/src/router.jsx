@@ -34,6 +34,9 @@ import "./App.css";
 import "./index.css";
 import Login from "./login/login";
 import Main from "./dashboardAdmin/main/main";
+import Teacher from "./dashboardAdmin/teacher_dash/teacherdash";
+import Admindash from "./dashboardAdmin/admindash/admindash";
+import Studentdash from "./dashboardAdmin/studentdash/studentdash";
 
 
 const router = createBrowserRouter([
@@ -48,6 +51,19 @@ const router = createBrowserRouter([
   {
     path:"/main",
     element :<Main/>
+  },
+
+  {
+    path:"/admindash",
+    element :<Admindash/>
+  },
+  {
+    path:"/teacherdash",
+    element :<Teacher/>
+  },
+    {
+    path:"/studentdash",
+    element :<Studentdash/>
   }
 
 ]);
