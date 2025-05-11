@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
-import "../src/sidebar_admin/sidebar";
-import Sidebar from "../src/sidebar_admin/sidebar";
+import "../src/components/sidebar_admin/sidebar";
+import Sidebar from "../src/components/sidebar_admin/sidebar";
 function App() {
   const handleClick = () => {
     axios

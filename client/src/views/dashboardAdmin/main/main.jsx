@@ -1,6 +1,6 @@
 import React from "react";
 import "../main/style.css";
-import Nav from "../../navbar/navbar";
+import Nav from "../../../components/navbar/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -145,7 +145,7 @@ const Main = () => {
                   </div>
                   <div>
                     <a href="/studentdash">
-                    <i class="bi bi-arrow-right"></i>
+                      <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
                 </div>
@@ -178,7 +178,7 @@ const Main = () => {
                   </div>
                   <div>
                     <a href="/admindash">
-                    <i class="bi bi-arrow-right"></i>
+                      <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
                 </div>

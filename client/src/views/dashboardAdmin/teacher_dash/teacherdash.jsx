@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./style.css";
-import Nav from "../../navbar/navbar";
+import Nav from "../../../components/navbar/navbar";
+
 
 const Teacher = () => {
 

@@ -2,12 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useState } from "react";
-import "../sidebar_admin/style.css";
+import "./style.css";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       <div>
@@ -60,9 +59,11 @@ function Sidebar() {
               <button className="btn btn-blue rounded-3" type="button">
                 <i className="bi bi-clipboard2-plus"></i> Modules
               </button>
+              <Link to="/login">
               <button className="btn btn-blue rounded-3" type="button">
                 <i className="bi bi-door-open"></i> Log Out
               </button>
+              </Link>
             </div>
           </div>
         </div>
