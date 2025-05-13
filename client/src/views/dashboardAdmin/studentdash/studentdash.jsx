@@ -1,6 +1,6 @@
 import React from "react";
-import "../studentdash/style.css";
 import Nav from "../../../components/navbar/navbar";
+
 
 function Studentdash() {
   return (

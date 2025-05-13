@@ -1,66 +1,126 @@
 import React from "react";
-import "./style.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Nav from "../../components/navbar/navbar";
-const Profile = ({ name, email, role, extraData = {} }) => {
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Form,
+  Button,
+  Image,
+} from "react-bootstrap";
+import Flag from "react-world-flags";
+
+const Profile = ({
+  profile,
+  name,
+  email,
+  phone,
+  ripNumber,
+  role,
+  address,
+  countryCode,
+  countryName,
+  avatar,
+}) => {
   return (
-    //
     <div>
       <Nav />
-      <div className="flex justify-center mb-4">
-        <h2 className="text-3xl font-bold text-gray-800">Profile</h2>
-      </div>
-      <div className="flex justify-center mb-4">
-        <img
-          src="https://i.pravatar.cc/100"
-          alt="Profile"
-          className="rounded-full w-24 h-24 mx-auto mb-4"
-        />
-      </div>
+      <Container className="my-4">
+        <h1 className="text-center mb-4" value={profile}>
+          {profile} Profile
+        </h1>
+        <Button variant="light" className="m-2">
+          Edit Profile
+        </Button>
+        <Card className="p-4 shadow-sm">
+          <Row className="align-items-center">
+            <Col md={3} className="text-center">
+              <Image
+                src={avatar || "https://i.pravatar.cc/100"}
+                roundedCircle
+                fluid
+                style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                alt="Profile"
+              />
+              <Form.Text className="text-muted d-block mt-2"></Form.Text>
+            </Col>
 
+            <Col md={9}>
+              <Form>
+                <Row className="mb-3">
+                  <Col md={6}>
+                    <Form.Label>Name & LastName</Form.Label>
+                    <Form.Control
+                      className="colorinput"
+                      value={name}
+                      readOnly
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      className="colorinput"
+                      value={email}
+                      readOnly
+                    />
+                  </Col>
+                </Row>
+
+                <Row className="mb-3">
+                  <Col md={6}>
+                    <Form.Label>Phone number</Form.Label>
+                    <Form.Control
+                      className="colorinput"
+                      value={phone}
+                      readOnly
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <Form.Label>RIP Number</Form.Label>
+                    <Form.Control
+                      className="colorinput"
+                      value={ripNumber}
+                      readOnly
+                    />
+                  </Col>
+                </Row>
+
+                <Row className="mb-3">
+                  <Col md={4}>
+                    <Form.Label>Role</Form.Label>
+                    <Form.Control
+                      className="colorinput"
+                      value={role}
+                      readOnly
+                    />
+                  </Col>
+                  <Col md={4}>
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control
+                      className="colorinput"
+                      value={address}
+                      readOnly
+                    />
+                  </Col>
+                  <Col md={4}>
+                    <Form.Label>Country</Form.Label>
+                    <div className="d-flex align-items-center">
+                      <Flag
+                        code={countryCode}
+                        style={{ width: "24px", height: "18px" }}
+                      />
+                      <span className="ms-2">{countryName}</span>
+                    </div>
+                  </Col>
+                </Row>
+              </Form>
+            </Col>
+          </Row>
+        </Card>
+      </Container>
     </div>
   );
 };
+
 export default Profile;
-
-{
-  /* <div>
-        <img
-          src="https://i.pravatar.cc/100"
-          alt="Profile"
-          className="rounded-full w-24 h-24 mx-auto mb-4"
-        />
-      </div>
-      <div className="flex justify-center mb-4">
-        <h2 className="text-3xl font-bold text-gray-800">Name: {name}</h2>
-      </div>
-      <div className="flex justify-center mb-4">
-        <p className="text-gray-600 text-lg">email: {email}</p>
-      </div>
-      <div className="flex justify-center mb-4">
-        <p className="text-gray-500 text-lg">Role: {role}</p>
-      </div>
-      <div className="flex justify-center mb-4">
-        {role === "admin" && (
-          <div className="text-sm text-blue-700 space-y-1">
-            <p>Users Managed: {extraData.usersManaged}</p>
-          </div>
-        )}
-
-        {role === "student" && (
-          <div className="text-sm text-green-700 space-y-1">
-            <p>Grade: {extraData.grade}</p>
-            <p>Courses: {extraData.courses?.join(", ") || "N/A"}</p>
-          </div>
-        )}
-
-        {role === "teacher" && (
-          <div className="text-sm text-purple-700 space-y-1">
-            <p>Department: {extraData.department}</p>
-            <p>Subjects: {extraData.subjects?.join(", ") || "N/A"}</p>
-          </div>
-        )}
-      </div> */
-}

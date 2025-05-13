@@ -1,12 +1,12 @@
 import React from "react";
-import "./style.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // لازم!
 import Sidebar from "../sidebar_admin/sidebar";
 import { useLocation } from "react-router-dom";
-import Login from "../../login/login";
+import { faker } from "@faker-js/faker";
+import Login from "../../views/login/login";
+
 const Nav = () => {
+  const avatar = faker.image.avatar();
+
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "short",
     day: "2-digit",
@@ -27,7 +27,7 @@ const Nav = () => {
           aria-expanded="false"
         >
           <img
-            src="https://i.pravatar.cc/40"
+            src={avatar}
             alt="Profile"
             className="rounded-circle me-2"
             width="35"
@@ -46,7 +46,7 @@ const Nav = () => {
             <hr className="dropdown-divider" />
           </li>
           <li>
-            <a className=" btn-gold dropdown-item"  href="../login">
+            <a className=" btn-gold dropdown-item" href="/">
               <i className="bi bi-box-arrow-right me-2"></i> Log Out
             </a>
           </li>
@@ -56,7 +56,7 @@ const Nav = () => {
             </a>
           </li>
           <li>
-            <a className="btn-gold dropdown-item" href="/profile">
+            <a className="btn-gold dropdown-item" href="/profileAdmin">
               <i className="bi bi-person me-2"></i> Profile
             </a>
           </li>

@@ -4,29 +4,38 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./App.css";
 import "./index.css";
-import Login from "./login/login";
-import Main from "./views/dashboardAdmin/main/main";
+import Home from "./views/dashboardAdmin/dashHome/dashHome";
 import Teacher from "../src/views/dashboardAdmin/teacher_dash/teacherdash";
-import Admindash from "../src/views/dashboardAdmin/admindash/admindash";
+import AdminManagement from "./views/dashboardAdmin/Admin_Management/AdminManagement";
 import Studentdash from "../src/views/dashboardAdmin/studentdash/studentdash";
 import Profileprops from "./utils/profile/Profile";
+import ProfileAdmin from "./views/dashboardAdmin/profile_Admin/profileAdmin";
+import ProfileStudent from "./views/dashboardStudent/profile_Student/profileStudent";
+import ProfileTeacher from "./views/dashboardTeacher/profile_Teacher/profileTeacher";
+import UserManagment from "./utils/UserManagement/UserManagment";
+import AddUser from "./utils/UserManagement/addUser/addUser";
+import UserDetails from "./utils/UserManagement/UserDetails/userDetails";
+import AddAdmin from "./views/dashboardAdmin/Admin_Management/addAdmin/addAdmin";
+import AdminDetails from "./views/dashboardAdmin/Admin_Management/adminDetails/AdminDetails";
+import Login from "./views/login/login";
+
+
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
   {
     path: "/app",
     element: <App />,
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
     path: "/main",
-    element: <Main />,
+    element: <Home />,
   },
-
   {
-    path: "/admindash",
-    element: <Admindash />,
+    path: "/AdminManagement",
+    element: <AdminManagement />,
   },
   {
     path: "/teacherdash",
@@ -36,9 +45,42 @@ const router = createBrowserRouter([
     path: "/studentdash",
     element: <Studentdash />,
   },
-    {
+  {
     path: "/profile",
     element: <Profileprops />,
+  },
+  {
+    path: "/profileAdmin",
+    element: <ProfileAdmin />,
+  },
+  {
+    path: "/profileStudent",
+    element: <ProfileStudent />,
+  },
+  {
+    path: "/profileTeacher",
+    element: <ProfileTeacher />,
+  },
+  {
+    path: "/userManagement",
+    element: <UserManagment />,
+  },
+  {
+    path: "/addUser",
+    element: <AddUser />,
+  },
+  {
+    path: "/userDetails",
+    element: <UserDetails />,
+  },
+
+  {
+    path: "/addAdmin",
+    element: <AddAdmin />,
+  },
+  {
+    path: "/adminDetails",
+    element: <AdminDetails />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

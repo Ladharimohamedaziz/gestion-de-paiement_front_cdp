@@ -1,13 +1,10 @@
 import React from "react";
-import "../main/style.css";
 import Nav from "../../../components/navbar/navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Teacher from "../teacher_dash/teacherdash";
-import Admindash from "../admindash/admindash";
+import AdminManagement from "../Admin_Management/AdminManagement";
 import Studentdash from "../studentdash/studentdash";
-const Main = () => {
+
+const Home = () => {
   return (
     <div>
       <div className="navbarposition">
@@ -31,7 +28,7 @@ const Main = () => {
               &gt;
             </button>
           </div>
-          <div className="d-flex flex-wrap gap-2 overflow-auto">
+          <div className="d-flex flex-wrap gap-2 ">
             {[
               {
                 day: "Monday",
@@ -177,7 +174,7 @@ const Main = () => {
                     <h6 className="mb-0">Administration Payments</h6>
                   </div>
                   <div>
-                    <a href="/admindash">
+                    <a href="/AdminManagement">
                       <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
@@ -199,7 +196,7 @@ const Main = () => {
     </div>
   );
 };
-export default Main;
+export default Home;
 
 // <div>
 // <Nav />

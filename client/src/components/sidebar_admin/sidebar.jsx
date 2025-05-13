@@ -1,26 +1,23 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import { useState } from "react";
-import "./style.css";
-import { Link } from "react-router-dom";
+import Login from "../../views/login/login";
 
+
+import { Link } from "react-router-dom";
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div>
-        
-          <button
-            className="btn"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#staticBackdrop"
-            aria-controls="staticBackdrop"
-          >
-            <i className="bi bi-list"></i>
-          </button>
-      
+        <button
+          className="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+        >
+          <i className="bi bi-list"></i>
+        </button>
+
         <div
           className="offcanvas offcanvas-start n-css"
           data-bs-backdrop="static"
@@ -42,27 +39,31 @@ function Sidebar() {
               ></button>
             </div>
           </div>
-
           <div className="offcanvas-body">
             <div
               className="gap-4 mt-5 mb-5 col-10 mx-auto p-4
             d-flex flex-column justify-content-start align-items-start"
             >
               <Link to="/main">
-              <button className="btn btn-blue rounded-3" type="button">
-                <i className="bi bi-columns-gap"></i> Dashboard
-              </button>
+                <button className="btn btn-blue rounded-3" type="button">
+                  <i className="bi bi-columns-gap"></i> Dashboard
+                </button>
+              </Link>
+              <Link to="/AdminManagement">
+                <button className="btn btn-blue rounded-3" type="button">
+                  <i className="bi bi-person-plus"></i> User Management
+                </button>
               </Link>
               <button className="btn btn-blue rounded-3" type="button">
-                <i className="bi bi-person-plus"></i> User Management
+                <i class="bi bi-wallet2"></i> Payment M
               </button>
               <button className="btn btn-blue rounded-3" type="button">
                 <i className="bi bi-clipboard2-plus"></i> Modules
               </button>
-              <Link to="/login">
-              <button className="btn btn-blue rounded-3" type="button">
-                <i className="bi bi-door-open"></i> Log Out
-              </button>
+              <Link to="/">
+                <button className="btn btn-blue rounded-3" type="button">
+                  <i className="bi bi-door-open"></i> Log Out
+                </button>
               </Link>
             </div>
           </div>
