@@ -1,9 +1,6 @@
 import { useState } from "react";
-import Login from "../../views/login/login";
-
-
-import { Link } from "react-router-dom";
-function Sidebar() {
+// import { Link } from "react-router-dom";
+function SidebarStudent() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -44,27 +41,23 @@ function Sidebar() {
               className="gap-4 mt-5 mb-5 col-10 mx-auto p-4
             d-flex flex-column justify-content-start align-items-start"
             >
-              <Link to="/main">
+              {/* <Link to="/main"> */}
                 <button className="btn btn-blue rounded-3" type="button">
                   <i className="bi bi-columns-gap"></i> Dashboard
                 </button>
-              </Link>
-              <Link to="/AdminManagement">
+              {/* </Link> */}
+              
                 <button className="btn btn-blue rounded-3" type="button">
-                  <i className="bi bi-person-plus"></i> User Management
+                  <i className="bi bi-person-circle"></i> Profile
                 </button>
-              </Link>
               <button className="btn btn-blue rounded-3" type="button">
-                <i class="bi bi-wallet2"></i> Payment M
+                <i className="bi bi-calendar-day"></i> schedule
               </button>
-              <button className="btn btn-blue rounded-3" type="button">
-                <i className="bi bi-clipboard2-plus"></i> Modules
-              </button>
-              <Link to="/">
+              {/* <Link to="/"> */}
                 <button className="btn btn-blue rounded-3" type="button">
                   <i className="bi bi-door-open"></i> Log Out
                 </button>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
         </div>
@@ -73,4 +66,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default SidebarStudent;

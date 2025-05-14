@@ -44,7 +44,7 @@ function UserDetails({ user }) {
           {/* Classes */}
           <div className="card p-3 shadow-sm mb-4">
             <div className="d-flex justify-content-between align-items-center mb-2">
-              <h6>📘 Classes</h6>
+              <h6>Classes</h6>
               <div>
                 <button className="btn btn-warning btn-sm me-2">Add salary</button>
                 <button className="btn btn-secondary btn-sm me-2">Edit</button>

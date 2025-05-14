@@ -57,11 +57,10 @@ function AddUser() {
           </Form.Group>
 
           <div className="d-flex justify-content-between">
-            <Link to="/UserManagement">
+
               <Button variant="secondary" type="button">
                 Back
               </Button>
-            </Link>
             <Button variant="warning" id="color" type="submit">
               Add User
             </Button>

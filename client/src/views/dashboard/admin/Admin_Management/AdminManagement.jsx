@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "../../../components/navbar/navbar";
-import UserManagement from "../../../utils/UserManagement/UserManagment";
+// import Nav from "../../../components/navbar/navbar";
 import { faker } from "@faker-js/faker";
+import UserManagement from "../../../../utils/userManagement/UserManagment";
 
 function AdminManagement() {
   const navigate = useNavigate();
@@ -16,12 +16,11 @@ function AdminManagement() {
   }));
 
   const handleAddUserClick = () => {
-    navigate("/addAdmin"); 
+    navigate("/admin/add-user"); 
   };
 
   return (
     <div>
-      <Nav />
       <UserManagement
         users={users}
         roles={["Admin"]}

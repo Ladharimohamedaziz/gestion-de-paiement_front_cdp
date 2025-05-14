@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../../components/navbar/navbar";
 import {
   Container,
   Row,
@@ -25,7 +24,7 @@ const Profile = ({
 }) => {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <Container className="my-4">
         <h1 className="text-center mb-4" value={profile}>
           {profile} Profile

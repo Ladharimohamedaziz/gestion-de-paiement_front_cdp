@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 function Login() {
@@ -54,11 +54,11 @@ function Login() {
                   />
                 </div>
                 <div className="mt-5 d-grid gap-3">
-                  <Link to="/main" className="d-blockd-block mb-3"> 
+                  {/* <Link to="/" className="d-blockd-block mb-3">  */}
                   <button id="color" type="button" className="btn p2 login-sectionx">
                     Login
                   </button>
-                  </Link>
+                  {/* </Link> */}
                   <button id="btn-secondary" type="button" className="btn p-2">
                     Connect With Alma
                   </button>

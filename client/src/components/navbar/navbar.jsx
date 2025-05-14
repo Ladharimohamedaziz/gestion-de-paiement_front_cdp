@@ -1,10 +1,9 @@
 import React from "react";
-import Sidebar from "../sidebar_admin/sidebar";
+// import Sidebar from "../sidebar_Admin/sidebar";
 import { useLocation } from "react-router-dom";
 import { faker } from "@faker-js/faker";
-import Login from "../../views/login/login";
 
-const Nav = () => {
+const Navbar = () => {
   const avatar = faker.image.avatar();
 
   const today = new Date().toLocaleDateString("en-GB", {
@@ -15,7 +14,7 @@ const Nav = () => {
   });
   return (
     <div className="d-flex justify-content-between align-items-center bg-light shadow-sm px-4 py-2 rounded">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="text-muted fs-6">{today}</div>
       {/* Dropdown */}
       <div className="dropdown">
@@ -71,4 +70,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;

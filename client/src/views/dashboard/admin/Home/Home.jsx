@@ -1,14 +1,9 @@
 import React from "react";
-import Nav from "../../../components/navbar/navbar";
-import Teacher from "../teacher_dash/teacherdash";
-import AdminManagement from "../Admin_Management/AdminManagement";
-import Studentdash from "../studentdash/studentdash";
 
-const Home = () => {
+const AdminHome= () => {
   return (
     <div>
       <div className="navbarposition">
-        <Nav />
       </div>
       <div className="container py-4">
         <h3 className="fw-bold mb-3">Payment Tracking</h3>
@@ -106,7 +101,7 @@ const Home = () => {
                     <h6 className="mb-0">Teacher Payments</h6>
                   </div>
                   <div>
-                    <a href="/teacherdash">
+                    <a href="/">
                       <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
@@ -141,7 +136,7 @@ const Home = () => {
                     <h6 className="mb-0">Student Payments</h6>
                   </div>
                   <div>
-                    <a href="/studentdash">
+                    <a href="/">
                       <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
@@ -174,7 +169,7 @@ const Home = () => {
                     <h6 className="mb-0">Administration Payments</h6>
                   </div>
                   <div>
-                    <a href="/AdminManagement">
+                    <a href="/">
                       <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>
@@ -196,22 +191,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
-
-// <div>
-// <Nav />
-// <div className="container mt-4">
-//   <h1 className="text-center">Welcome to the Dashboard</h1>
-//   <p className="text-left fw-bold fs-4">Payment Tracking</p>
-//   <div className="row">
-//     <div className="col-md-6">
-//       <h2>Section 1</h2>
-//       <p>This is the first section of the main content.</p>
-//     </div>
-//     <div className="col-md-6">
-//       <h2>Section 2</h2>
-//       <p>This is the second section of the main content.</p>
-//     </div>
-//   </div>
-// </div>
-// </div>
+export default AdminHome;

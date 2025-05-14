@@ -14,7 +14,7 @@ import { faker } from '@faker-js/faker';
   const role = "Teacher";
   
 
-function profileTeacher() {
+function ProfileTeacher() {
   return (
     <div>
       <Profile 
@@ -33,4 +33,4 @@ function profileTeacher() {
   );
 }
 
-export default profileTeacher;
+export default ProfileTeacher;

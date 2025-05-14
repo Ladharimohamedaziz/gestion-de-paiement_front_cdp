@@ -1,6 +1,5 @@
 import React from "react";
-import UserDetails from "../../../../utils/UserManagement/UserDetails/userDetails";
-function AdminDetails() {
+function AdminDetails () {
   return (
     <div>
       <UserDetails

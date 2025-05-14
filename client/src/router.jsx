@@ -1,92 +1,75 @@
 import React from "react";
+
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import App from "./App";
-import "./App.css";
 import "./index.css";
-import Home from "./views/dashboardAdmin/dashHome/dashHome";
-import Teacher from "../src/views/dashboardAdmin/teacher_dash/teacherdash";
-import AdminManagement from "./views/dashboardAdmin/Admin_Management/AdminManagement";
-import Studentdash from "../src/views/dashboardAdmin/studentdash/studentdash";
-import Profileprops from "./utils/profile/Profile";
-import ProfileAdmin from "./views/dashboardAdmin/profile_Admin/profileAdmin";
-import ProfileStudent from "./views/dashboardStudent/profile_Student/profileStudent";
-import ProfileTeacher from "./views/dashboardTeacher/profile_Teacher/profileTeacher";
-import UserManagment from "./utils/UserManagement/UserManagment";
-import AddUser from "./utils/UserManagement/addUser/addUser";
-import UserDetails from "./utils/UserManagement/UserDetails/userDetails";
-import AddAdmin from "./views/dashboardAdmin/Admin_Management/addAdmin/addAdmin";
-import AdminDetails from "./views/dashboardAdmin/Admin_Management/adminDetails/AdminDetails";
 import Login from "./views/login/login";
-
-
+import DashboardLayout from "./components/layouts/DashboardLayout";
+import AdminHome from "./views/dashboard/admin/home/Home";
+import TeacherHome from "./views/dashboard/teacher/home/Home";
+import StudentHome from "./views/dashboard/student/home/Home";
+import AdminManagement from "./views/dashboard/admin/Admin_Management/AdminManagement";
+import TeacherManagement from "./views/dashboard/admin/Admin_for_Teacher_Management/TeacherManagment";
+import StudentManagement from "./views/dashboard/admin/Admin_for_Student_Management/StudentManagment";
+import ProfileAdmin from "./views/dashboard/admin/AdminProfile";
+import ProfileStudent from "./views/dashboard/student/StudentProfile";
+import ProfileTeacher from "./views/dashboard/teacher/TeacherProfile";
+import AddAdmin from "./views/dashboard/admin/Admin_Management/addAdmin";
+import AdminDetails from "./views/dashboard/admin/Admin_Management/AdminDetails";
+import UserManagement from "./utils/userManagement/UserManagment";
+import AddUser from "./utils/userManagement/AddUser";
+import UserDetails from "./utils/userManagement/UserDetails";
+import Studentschedule from "./views/dashboard/student/Studentschedule"
+import Teacherschedule from "./views/dashboard/teacher/Teacherschedule";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
   },
+  // Admin routes
   {
-    path: "/app",
-    element: <App />,
-  },
-  {
-    path: "/main",
-    element: <Home />,
-  },
-  {
-    path: "/AdminManagement",
-    element: <AdminManagement />,
-  },
-  {
-    path: "/teacherdash",
-    element: <Teacher />,
-  },
-  {
-    path: "/studentdash",
-    element: <Studentdash />,
-  },
-  {
-    path: "/profile",
-    element: <Profileprops />,
-  },
-  {
-    path: "/profileAdmin",
-    element: <ProfileAdmin />,
-  },
-  {
-    path: "/profileStudent",
-    element: <ProfileStudent />,
-  },
-  {
-    path: "/profileTeacher",
-    element: <ProfileTeacher />,
-  },
-  {
-    path: "/userManagement",
-    element: <UserManagment />,
-  },
-  {
-    path: "/addUser",
-    element: <AddUser />,
-  },
-  {
-    path: "/userDetails",
-    element: <UserDetails />,
+    path: "/admin",
+    element: <DashboardLayout role="admin" />,
+    children: [
+      { path: "home", element: <AdminHome /> },
+      { path: "management", element: <AdminManagement /> },
+      { path: "teachers", element: <TeacherManagement /> },
+      { path: "students", element: <StudentManagement /> },
+      { path: "profile", element: <ProfileAdmin /> },
+      { path: "add-admin", element: <AddAdmin /> },
+      { path: "admin-details", element: <AdminDetails /> },
+      { path: "user-management", element: <UserManagement /> },
+      { path: "add-user", element: <AddUser /> },
+      { path: "user-details", element: <UserDetails /> },
+    ],
   },
 
   {
-    path: "/addAdmin",
-    element: <AddAdmin />,
+    path: "/teacher",
+    element: <DashboardLayout role="teacher" />,
+    children: [
+      { path: "home", element: <TeacherHome /> },
+      { path: "profile", element: <ProfileTeacher /> },
+      { path: "schedule", element: <Teacherschedule /> },
+    ],
   },
+
+  // Student routes
   {
-    path: "/adminDetails",
-    element: <AdminDetails />,
+    path: "/student",
+    element: <DashboardLayout role="student" />,
+    children: [
+      { path: "home", element: <StudentHome /> },
+      { path: "profile", element: <ProfileStudent /> },
+      { path: "schedule", element: <Studentschedule /> },
+    ],
   },
+
+
+  {
+  path: "*",
+  element: <div>404 - Page Not Found  </div>
+},
+
 ]);
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
-
 export default router;
