@@ -5,7 +5,8 @@ import { faker } from "@faker-js/faker";
 
 const Navbar = () => {
   const avatar = faker.image.avatar();
-
+  const name = faker.person.fullName();
+  const email = faker.internet.email();
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "short",
     day: "2-digit",
@@ -32,7 +33,7 @@ const Navbar = () => {
             width="35"
             height="35"
           />
-          <span className="fw-semibold me-1">Mr Aziz</span>
+          <span className="fw-semibold me-1">{name}</span>
           <i className="bi bi-caret-down-fill"></i>
         </button>
 
@@ -40,7 +41,7 @@ const Navbar = () => {
           className="dropdown-menu dropdown-menu-end"
           aria-labelledby="dropdownMenuButton"
         >
-          <li className="btn-gold px-3 text-muted small">Aziz@example.com</li>
+          <li className="btn-gold px-3 text-muted small">{email}</li>
           <li>
             <hr className="dropdown-divider" />
           </li>

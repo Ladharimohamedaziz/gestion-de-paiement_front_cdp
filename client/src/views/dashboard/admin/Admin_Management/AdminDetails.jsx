@@ -1,9 +1,13 @@
 import React from "react";
+import UserDetails from "../../../../utils/UserManagement/userDetails";
+import { faker } from "@faker-js/faker";
+
 function AdminDetails () {
   return (
     <div>
       <UserDetails
         user={{
+
           name: "John Doe",
           email: "aaa@aaa.com",
           role: "Admin",
@@ -29,7 +33,6 @@ export default AdminDetails;
 
 // import React from "react";
 // import UserDetails from "../../utils/UserManagement/UserDetails";
-// import { faker } from "@faker-js/faker";
 
 // function AdminDetails() {
 //   // توليد بيانات وهمية باستخدام faker

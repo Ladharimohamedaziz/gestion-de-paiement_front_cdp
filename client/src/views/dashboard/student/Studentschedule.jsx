@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 function Studentschedule() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [events, setEvents] = useState([
@@ -14,7 +13,6 @@ function Studentschedule() {
     const month = date.getMonth();
     return new Date(year, month + 1, 0).getDate();
   };
-
   const generateCalendarDays = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
