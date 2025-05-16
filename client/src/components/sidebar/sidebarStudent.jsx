@@ -14,7 +14,6 @@ function SidebarStudent() {
         >
           <i className="bi bi-list"></i>
         </button>
-
         <div
           className="offcanvas offcanvas-start n-css"
           data-bs-backdrop="static"
@@ -46,7 +45,6 @@ function SidebarStudent() {
                   <i className="bi bi-columns-gap"></i> Dashboard
                 </button>
               {/* </Link> */}
-              
                 <button className="btn btn-blue rounded-3" type="button">
                   <i className="bi bi-person-circle"></i> Profile
                 </button>

@@ -2,8 +2,8 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import SidebarAdmin from "../sidebar/sidebarAdmin";
-import SidebarTeacher from "../sidebar/sidebarTeacher"; // إضافة Sidebar للمعلم
-import SidebarStudent from "../sidebar/sidebarStudent"; // إضافة Sidebar للطالب
+import SidebarTeacher from "../sidebar/sidebarTeacher";
+import SidebarStudent from "../sidebar/sidebarStudent"; 
 
 const DashboardLayout = ({ role }) => {
   let SidebarComponent;
@@ -18,7 +18,7 @@ const DashboardLayout = ({ role }) => {
 
   return (
     <div className="admin-dashboard">
-      <Navbar role={role} /> {/* تمرير الدور للنافبار إذا يلزم */}
+      <Navbar role={role} /> 
       <div className="dashboard-content">
         <SidebarComponent />
         <div className="main-content">

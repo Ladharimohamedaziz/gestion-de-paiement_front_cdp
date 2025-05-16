@@ -271,14 +271,14 @@ export default function Management() {
             {["all", "succeeded", "pending", "declined", "refunded"].map(
               (tab) => (
                 <Nav.Item key={tab}>
-                    <Nav.Link
+                  <Nav.Link
                     id="navcolor"
-                      className=""
-                      active={activeTab === tab}
-                      onClick={() => setActiveTab(tab)}
-                    >
-                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                    </Nav.Link>
+                    className=""
+                    active={activeTab === tab}
+                    onClick={() => setActiveTab(tab)}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  </Nav.Link>
                 </Nav.Item>
               )
             )}
@@ -304,6 +304,7 @@ export default function Management() {
                     <td>${p.amount.toFixed(2)}</td>
                     <td>{p.paymentMethod}</td>
                     <td>{p.creationDate}</td>
+            
                     <td>
                       <Badge bg={variant}>
                         {icon} {text}
@@ -387,6 +388,8 @@ export default function Management() {
                         <ChevronRight size={18} />
                       </Button>
                     </td>
+                    <td>
+                    </td>
                   </tr>
                 );
               })}
@@ -400,185 +403,149 @@ export default function Management() {
   const renderTeacherManagement = () => (
     <Card className="mb-4 shadow-sm">
       <Card.Body>
-        <h4 className="mb-3">Teacher Management</h4>
+        <h4 className="mb-3">Teacher Payment</h4>
+
         <InputGroup className="mb-3" style={{ maxWidth: "300px" }}>
           <FormControl
             placeholder="Search Teachers..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <div className="ms-3">
-            <Col md="auto">
-              <Button variant="primary" onClick={() => setShowModal(true)}>
-                Add User
-              </Button>
-              <Modal
-                show={showModal}
-                onHide={() => setShowModal(false)}
-                centered
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title>Add New User</Modal.Title>
-                </Modal.Header>
-                <Form>
-                  <Modal.Body>
-                    <Row className="mb-3">
-                      <Col>
-                        <Form.Group controlId="firstName">
-                          <Form.Label>First Name</Form.Label>
-                          <Form.Control
-                            type="text"
-                            placeholder="Enter first name"
-                            autoFocus
-                          />
-                        </Form.Group>
-                      </Col>
-                      <Col>
-                        <Form.Group controlId="lastName">
-                          <Form.Label>Last Name</Form.Label>
-                          <Form.Control
-                            type="text"
-                            placeholder="Enter last name"
-                          />
-                        </Form.Group>
-                      </Col>
-                    </Row>
-                    <Form.Group controlId="email" className="mb-3">
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" />
-                    </Form.Group>
-                    <Form.Group controlId="password" className="mb-3">
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        type="password"
-                        placeholder="Enter password"
-                      />
-                    </Form.Group>
-                    <Row className="mb-3">
-                      <Col>
-                        <Form.Group controlId="phone">
-                          <Form.Label>Phone</Form.Label>
-                          <Form.Control
-                            type="text"
-                            placeholder="Enter phone number"
-                          />
-                        </Form.Group>
-                      </Col>
-                      <Col>
-                        <Form.Group controlId="rib">
-                          <Form.Label>RIB Number</Form.Label>
-                          <Form.Control
-                            type="text"
-                            placeholder="Enter RIB number"
-                          />
-                        </Form.Group>
-                      </Col>
-                    </Row>
-                    <Form.Group controlId="paymentMethod" className="mb-3">
-                      <Form.Label>Payment Method</Form.Label>
-                      <Form.Select defaultValue="">
-                        <option disabled value="">
-                          -- Select payment method --
-                        </option>
-                        <option>Per Semester</option>
-                        <option>Monthly</option>
-                        <option>Per Hour</option>
-                      </Form.Select>
-                    </Form.Group>
-                    <Form.Group controlId="paymentMethod" className="mb-3">
-                      <Form.Label>Select Session</Form.Label>
-                      <Form.Select defaultValue="">
-                        <option disabled value="">
-                          -- Select Session --
-                        </option>
-                        <option>Informatique</option>
-                        <option>Graphic Design</option>
-                        <option>Marketing</option>
-                      </Form.Select>
-                    </Form.Group>
-                    <Form.Group controlId="paymentMethod" className="mb-3">
-                      <Form.Label>Select Modules</Form.Label>
-                      <Form.Select defaultValue="">
-                        <option disabled value="">
-                          -- Select Session --
-                        </option>
-                        <option>PHP</option>
-                        <option>UML</option>
-                        <option>Javascript</option>
-                      </Form.Select>
-                    </Form.Group>
-                    <Form.Group controlId="">
-                      <Form.Label>List Modules & session</Form.Label>
-                      <Form.Control
-                        type="text"
-                        className="p-5"
-                        placeholder=" "
-                      />
-                    </Form.Group>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button
-                      variant="secondary"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Cancel
-                    </Button>
-                    <Button variant="primary" type="submit">
-                      Save User
-                    </Button>
-                  </Modal.Footer>
-                </Form>
-              </Modal>
-            </Col>
-          </div>
+          <Button
+            className="ms-2"
+            variant="primary"
+            onClick={() => setShowModal(true)}
+          >
+            Add User
+          </Button>
         </InputGroup>
+
+        {/* Modal: Add Teacher */}
+        <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Add New Teacher</Modal.Title>
+          </Modal.Header>
+          <Form>
+            <Modal.Body>
+              <Row className="mb-3">
+                <Col>
+                  <Form.Group controlId="firstName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter first name"
+                      autoFocus
+                    />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group controlId="lastName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control type="text" placeholder="Enter last name" />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Form.Group controlId="email" className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" />
+              </Form.Group>
+              <Form.Group controlId="password" className="mb-3">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Enter password" />
+              </Form.Group>
+              <Row className="mb-3">
+                <Col>
+                  <Form.Group controlId="phone">
+                    <Form.Label>Phone</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter phone number"
+                    />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group controlId="rib">
+                    <Form.Label>RIB Number</Form.Label>
+                    <Form.Control type="text" placeholder="Enter RIB number" />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Form.Group controlId="paymentMethod" className="mb-3">
+                <Form.Label>Payment Method</Form.Label>
+                <Form.Select>
+                  <option>-- Select payment method --</option>
+                  <option>Per Semester</option>
+                  <option>Monthly</option>
+                  <option>Per Hour</option>
+                </Form.Select>
+              </Form.Group>
+              <Form.Group controlId="session" className="mb-3">
+                <Form.Label>Select Session</Form.Label>
+                <Form.Select>
+                  <option>-- Select Session --</option>
+                  <option>Informatique</option>
+                  <option>Graphic Design</option>
+                  <option>Marketing</option>
+                </Form.Select>
+              </Form.Group>
+              <Form.Group controlId="modules" className="mb-3">
+                <Form.Label>Select Modules</Form.Label>
+                <Form.Select>
+                  <option>-- Select Module --</option>
+                  <option>PHP</option>
+                  <option>UML</option>
+                  <option>Javascript</option>
+                </Form.Select>
+              </Form.Group>
+              <Form.Group controlId="summary">
+                <Form.Label>Modules & Sessions Summary</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="e.g. PHP - Informatique"
+                />
+              </Form.Group>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => setShowModal(false)}>
+                Cancel
+              </Button>
+              <Button variant="primary" type="submit">
+                Save Teacher
+              </Button>
+            </Modal.Footer>
+          </Form>
+        </Modal>
+
+        {/* Table: Teachers */}
         <Table bordered hover responsive>
-          <thead>
+          <thead className="table-light">
             <tr>
               <th>Name</th>
               <th>Email</th>
               <th>Class</th>
-              <th>Module</th>
-              <th>Value</th>
-              <th>Status</th>
-              <th></th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredTeachers.map((t, i) => (
-              <tr key={i}>
+              <tr key={t.email}>
                 <td>{t.name}</td>
                 <td>{t.email}</td>
                 <td>{t.class}</td>
                 <td>
-                  <Form.Select defaultValue={t.module}>
-                    {modules.map((m, j) => (
-                      <option key={j}>{m}</option>
-                    ))}
-                  </Form.Select>
-                </td>
-                <td>
-                  <Form.Select defaultValue={t.value}>
-                    {values.map((v, j) => (
-                      <option key={j}>{v}</option>
-                    ))}
-                  </Form.Select>
-                </td>
-                <td>
-                  <Button size="sm" variant="success" className="me-1">
-                    Present
-                  </Button>
-                  <Button size="sm" variant="danger">
-                    Absent
+                  <Button size="sm" variant="outline-primary">
+                    <Mail size={14} className="me-1" />
+                    Email
                   </Button>
                 </td>
-                <td>
-                  <Link to="/admin/admin-details">
-                    <Button>
-                      <ChevronRight size={18} />
-                    </Button>
-                  </Link>
-                </td>
+                 <td className="d-flex justify-content-center">
+                    <Link to="/admin/admin-details">
+                      <Button>
+                        <ChevronRight size={18} />
+                      </Button>
+                    </Link>
+                  </td>
               </tr>
             ))}
           </tbody>
@@ -589,6 +556,7 @@ export default function Management() {
 
   const renderAdminManagement = () => (
     <Card className="mb-4 shadow-sm">
+   <h4 className="text-center mb-3">Admin Payments</h4>
       <Card.Body>
         <Row className="align-items-center mb-3">
           <Col md={5}>

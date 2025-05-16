@@ -17,14 +17,12 @@ function SidebarTeacher() {
         >
           <i className="bi bi-list"></i>
         </button>
-
         <div
           className="offcanvas offcanvas-start n-css"
           data-bs-backdrop="static"
           tabIndex="-1"
           id="staticBackdrop"
-          aria-labelledby="staticBackdropLabel"
-        >
+          aria-labelledby="staticBackdropLabel">
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="staticBackdropLabel"></h5>
             <div className="logo">

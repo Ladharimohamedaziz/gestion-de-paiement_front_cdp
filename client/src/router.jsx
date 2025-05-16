@@ -11,12 +11,13 @@ import StudentHome from "./views/dashboard/student/home/Home";
 import ProfileAdmin from "./views/dashboard/admin/AdminProfile";
 import ProfileStudent from "./views/dashboard/student/StudentProfile";
 import ProfileTeacher from "./views/dashboard/teacher/TeacherProfile";
-import AdminDetails from "./views/dashboard/admin/Admin_Management/AdminDetails";
+import AdminDetails from "./views/dashboard/admin/Admin_detaile/AdminDetails";
 import UserDetails from "./utils/UserManagement/userDetails";
 import Studentschedule from "./views/dashboard/student/Studentschedule";
 import Teacherschedule from "./views/dashboard/teacher/Teacherschedule";
 import Management from "./views/dashboard/admin/Management/Management";
 import Modules from "../src/views/dashboard/admin/Modules/Modules";
+import Payment from "./views/dashboard/admin/Payment/Payment";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "user-details", element: <UserDetails /> },
       { path: "management", element: <Management /> },
       { path: "modules", element: <Modules /> },
+      { path: "payment", element: <Payment /> },
     ],
   },
   {
@@ -42,6 +44,7 @@ const router = createBrowserRouter([
       { path: "home", element: <TeacherHome /> },
       { path: "profile", element: <ProfileTeacher /> },
       { path: "schedule", element: <Teacherschedule /> },
+
     ],
   },
   {

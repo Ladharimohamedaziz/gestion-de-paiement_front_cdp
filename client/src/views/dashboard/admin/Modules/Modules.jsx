@@ -10,7 +10,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-// import { PencilSquare, Trash } from 'react-bootstrap-icons';
+
 
 const Modules = () => {
   const [sessionFilter, setSessionFilter] = useState("All Session");

@@ -51,7 +51,7 @@ const scheduleData = [
 ];
 
 const days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-const hours = Array.from({ length: 11 }, (_, i) => 7 + i); // 07h à 17h
+const hours = Array.from({ length: 11 }, (_, i) => 7 + i); 
 
 const Teacherschedule = () => {
   return (

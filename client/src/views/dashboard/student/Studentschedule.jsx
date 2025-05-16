@@ -16,12 +16,12 @@ function Studentschedule() {
   const generateCalendarDays = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
-    const firstDay = new Date(year, month, 1).getDay(); // 0 (Sun) to 6 (Sat)
+    const firstDay = new Date(year, month, 1).getDay(); 
     const daysInMonth = getDaysInMonth(currentDate);
 
     const calendarDays = [];
     for (let i = 0; i < firstDay; i++) {
-      calendarDays.push(null); // Empty cells before the first day
+      calendarDays.push(null); 
     }
 
     for (let day = 1; day <= daysInMonth; day++) {
@@ -31,7 +31,7 @@ function Studentschedule() {
     return calendarDays;
   };
 
-  const formatDate = (date) => date.toISOString().split("T")[0]; // YYYY-MM-DD
+  const formatDate = (date) => date.toISOString().split("T")[0]; 
 
   const isToday = (date) => {
     const today = new Date();

@@ -9,7 +9,6 @@ import {
   Image,
 } from "react-bootstrap";
 import Flag from "react-world-flags";
-
 const Profile = ({
   profile,
   name,
@@ -24,7 +23,6 @@ const Profile = ({
 }) => {
   return (
     <div>
-      {/* <Nav /> */}
       <Container className="my-4">
         <h1 className="text-center mb-4" value={profile}>
           {profile} Profile
@@ -44,7 +42,6 @@ const Profile = ({
               />
               <Form.Text className="text-muted d-block mt-2"></Form.Text>
             </Col>
-
             <Col md={9}>
               <Form>
                 <Row className="mb-3">
@@ -65,7 +62,6 @@ const Profile = ({
                     />
                   </Col>
                 </Row>
-
                 <Row className="mb-3">
                   <Col md={6}>
                     <Form.Label>Phone number</Form.Label>
@@ -84,7 +80,6 @@ const Profile = ({
                     />
                   </Col>
                 </Row>
-
                 <Row className="mb-3">
                   <Col md={4}>
                     <Form.Label>Role</Form.Label>
@@ -121,5 +116,4 @@ const Profile = ({
     </div>
   );
 };
-
 export default Profile;

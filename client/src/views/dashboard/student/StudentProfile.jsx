@@ -3,15 +3,14 @@ import Profile from "../../../utils/profile/Profile";
 import { faker } from "@faker-js/faker";
 
 function ProfileStudent() {
-  // generate fake data at render time
-  const profile = "Student"; // This can be dynamic based on your application logic
+  const profile = "Student";
   const name = faker.person.fullName();
   const email = faker.internet.email();
   const address = faker.location.streetAddress();
   const phone = faker.phone.number();
-  const ripNumber = faker.string.numeric(12); // 12-digit fake RIP
+  const ripNumber = faker.string.numeric(12);
   const countryName = faker.location.country();
-  const countryCode = "CA"; // You can randomize or fix this
+  const countryCode = "CA"; 
   const avatar = faker.image.avatar();
   const role = "Student";
 

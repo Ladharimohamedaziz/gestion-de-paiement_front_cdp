@@ -10,12 +10,10 @@ function UserDetails({ user }) {
     );
   }
   const avatar = faker.image.avatar();
-
   const total = user.classes.reduce(
     (acc, curr) => acc + parseFloat(curr.price.replace(",", ".")),
     0
   );
-
   return (
     <div className="container my-5">
       <h4 className="mb-4">← User Details</h4>
@@ -56,7 +54,6 @@ function UserDetails({ user }) {
             </button>
           </div>
         </div>
-
         {/* Right panel */}
         <div className="col-md-8">
           {/* Classes */}
@@ -103,7 +100,6 @@ function UserDetails({ user }) {
               </tbody>
             </table>
           </div>
-
           {/* Payment History */}
           <div className="card p-3 shadow-sm">
             <div className="d-flex justify-content-between align-items-center mb-2">
@@ -141,5 +137,4 @@ function UserDetails({ user }) {
     </div>
   );
 }
-
 export default UserDetails;
